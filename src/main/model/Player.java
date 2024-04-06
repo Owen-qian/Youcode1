@@ -1,9 +1,10 @@
+package main.model;
+
 public class Player extends Person{
     private Skill healing;
-    public Player(int HP, int damage, int defence,double multipler){
-        super.type=0;
-        super(int HP, int damage, int defence,double multipler)
-        healing = new Healing(multipler);
+    public Player(int HP, int damage, int defence,double multiplier){
+        super(0, HP, damage, defence, multiplier);
+        healing = new Healing(multiplier);
     }
 
     public Skill getHealing() {
@@ -16,6 +17,6 @@ public class Player extends Person{
             median = 100;
         }
         HP = median;
-        return this.healing.print();
+        return this.healing.getRandomMessage();
     }
 }

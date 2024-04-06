@@ -1,5 +1,8 @@
+package main.model;
+
 public abstract class Person {
-    protected Skill attack,defence,booster;
+    protected Skill attack,defence;
+    protected Booster booster;
     protected int HP,type;
     private int shield;
 
@@ -7,10 +10,11 @@ public abstract class Person {
         return shield;
     }
 
-    public class(int HP, int damage, int defence,double multipler){
+    public Person(int type, int HP, int damage, int defence,double multipler){
+        this.type = type;
         this.HP = HP;
         this.defence = new Defence(type,defence,multipler);
-        this.attack = new Attack(type,damge,multipler);
+        this.attack = new Attack(type,damage,multipler);
         this.booster = new Booster(type);
     }
 
@@ -18,7 +22,7 @@ public abstract class Person {
         return attack;
     }
 
-    public Skill getBooster() {
+    public Booster getBooster() {
         return booster;
     }
 
@@ -28,11 +32,11 @@ public abstract class Person {
     public String useAttack(Person p){
         int amount = this.attack.getAmount(this.booster.isStatus());
         p.beAttacked(amount);
-        return this.attack.print();
+        return this.attack.getRandomMessage();
     }
     public String useDefence(){
         shield = this.defence.getAmount(this.booster.isStatus());
-        return this.defence.print();
+        return this.defence.getRandomMessage();
     }
     public String useBooster(){
         return this.booster.print();
@@ -49,7 +53,7 @@ public abstract class Person {
             HP = HP - amount;
         }
     }
-    private boolean check(){
+    private boolean check() {
         return HP <= 0;
     }
 }

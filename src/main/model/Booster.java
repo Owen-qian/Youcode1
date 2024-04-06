@@ -8,7 +8,7 @@ public class Booster{
     private boolean status = false;
     private static int rounds;
     private List<String> actions = new ArrayList<>();
-    public Booster(){
+    public Booster(int type){
 
         actions.add("engage in meditation");
         actions.add("sleep earlier");
