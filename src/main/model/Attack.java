@@ -8,24 +8,23 @@ public class Attack {
     private static final int BASE_ATTACK = 25;
 
     private int attackDamage;
-    private boolean boosted;
+    private double multiplier;
     private static List<String> attackMessages;
 
-    public Attack() {
+    public Attack(double multiplier) {
         attackDamage = BASE_ATTACK;
-        boosted = false;
+        this.multiplier = multiplier;
         attackMessages = new ArrayList<>();
         attackMessages.add("You studied hard!");
         attackMessages.add("You made progress!");
         attackMessages.add("Keep up the good work!");
     }
 
-    public int getAttackDamage() {
+    public int getAttackDamage(boolean buffed) {
+        if (buffed) {
+            return (int) (attackDamage * multiplier);
+        }
         return attackDamage;
-    }
-
-    public boolean getBoosted() {
-        return boosted;
     }
 
     public String getRandomMessage() {

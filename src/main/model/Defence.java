@@ -6,7 +6,8 @@ public class Defence {
     private int amount;
     private double multiplier;
     private List<String> actions = new ArrayList<>();
-    public Defence (int amount,double multiplier){
+
+    public Defence (int amount,double multiplier) {
         this.amount = amount;
         this.multiplier = multiplier;
         actions.add("go hiking");
@@ -15,15 +16,17 @@ public class Defence {
         actions.add("go swimming");
         actions.add("fave fun with friends");
     }
-    public int getAmount(boolean buffed){
+
+    public int getAmount(boolean buffed) {
         if(buffed){
             return (int) (amount * multiplier);
         }
         return amount;
     }
-    public void print(){
+
+    public String getAction() {
         Random random = new Random();
-        System.out.println("You choose to "+actions.get(random.nextInt(actions.size()+1))+"! :)");
+        return "You choose to "+actions.get(random.nextInt(actions.size()+1))+"! :)";
     }
 
 }
