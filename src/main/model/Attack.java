@@ -1,35 +1,20 @@
-import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
+package main.model;
 
-/**
- * Attack class
- */
-public class Attack {
-    private static final int BASE_ATTACK = 25;
+public class Attack extends Skill {
 
-    private int attackDamage;
-    private double multiplier;
-    private static List<String> attackMessages;
-
-    public Attack(double multiplier) {
-        attackDamage = BASE_ATTACK;
-        this.multiplier = multiplier;
-        attackMessages = new ArrayList<>();
-        attackMessages.add("You studied hard!");
-        attackMessages.add("You made progress!");
-        attackMessages.add("Keep up the good work!");
+    public Attack(int characterType, int attackDamage, double multiplier) {
+        super(characterType, attackDamage, multiplier);
     }
 
-    public int getAttackDamage(boolean buffed) {
-        if (buffed) {
-            return (int) (attackDamage * multiplier);
+    public void setMessages(int characterType) {
+        if (characterType == PLAYER_TYPE) {
+            messages.add("You studied hard");
+            messages.add("You made progress");
+            messages.add("Keep up the good work");
+        } else if (characterType == MONSTER_TYPE) {
+            messages.add("The enemy attacked");
+            messages.add("You were a victim of procrastination");
+            messages.add("Monster retaliated when you were distracted from your work");
         }
-        return attackDamage;
-    }
-
-    public String getRandomMessage() {
-        int randomNum = ThreadLocalRandom.current().nextInt(0, attackMessages.size());
-        return attackMessages.get(randomNum);
-    }
-    
+    }    
 }
