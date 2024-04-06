@@ -21,10 +21,9 @@ public class Defence {
         }
         return amount;
     }
-    public String print(){
+    public void print(){
         Random random = new Random();
-        String action = "You choose to "+actions.get(random.nextInt(actions.size()))+". You are much stronger now! :)");
-        return action;
+        System.out.println("You choose to "+actions.get(random.nextInt(actions.size()+1))+"! :)");
     }
 
 }
