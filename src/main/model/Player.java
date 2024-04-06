@@ -17,6 +17,6 @@ public class Player extends Person{
             median = 100;
         }
         HP = median;
-        return this.healing.print();
+        return this.healing.getRandomMessage();
     }
 }
