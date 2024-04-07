@@ -1,11 +1,13 @@
 package test;
 
-import main.model.*;
-
+import main.model.Attack;
+import main.model.Defence;
+import main.model.Healing;
+import main.model.Skill;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SkillTest {
     private Skill atk;
