@@ -12,9 +12,9 @@ public class Attack extends Skill {
             messages.add("You made progress");
             messages.add("Keep up the good work");
         } else if (characterType == MONSTER_TYPE) {
-            messages.add("The enemy attacked");
+            messages.add("Massive work makes you stressful");
             messages.add("You were a victim of procrastination");
-            messages.add("Monster retaliated when you were distracted from your work");
+            messages.add("You were distracted from your work. Things become worse.");
         }
     }    
 }
