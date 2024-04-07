@@ -2,6 +2,6 @@ package main.ui;
 
 public class Main {
     public static void main(String[] args) {
-        //stub
+        System.out.println("test test");
     }
 }

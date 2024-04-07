@@ -10,11 +10,11 @@ public abstract class Person {
         return shield;
     }
 
-    public Person(int type, int HP, int damage, int defence,double multipler){
+    public Person(int type, int HP, int damage, int defence,double multiplier){
         this.type = type;
         this.HP = HP;
-        this.defence = new Defence(type,defence,multipler);
-        this.attack = new Attack(type,damage,multipler);
+        this.defence = new Defence(type,defence,multiplier);
+        this.attack = new Attack(type,damage,multiplier);
         this.booster = new Booster(type);
     }
 
