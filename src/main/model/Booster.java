@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Booster{
     private boolean status = false;
-    private static int rounds;
+    private int rounds;
     private List<String> actions = new ArrayList<>();
     public Booster(int type){
 
