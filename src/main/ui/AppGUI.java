@@ -1,5 +1,6 @@
 package main.ui;
 
+import main.model.Game;
 import main.ui.panels.GamePanel;
 import main.ui.panels.HomePage;
 import main.ui.panels.MenuPanel;
@@ -11,6 +12,7 @@ import java.awt.event.ActionListener;
 
 public class AppGUI extends JFrame implements ActionListener {
 
+    private Game game;
     private HomePage homePage;
     private MenuPanel menu;
     private GamePanel gamepanel;
@@ -20,6 +22,7 @@ public class AppGUI extends JFrame implements ActionListener {
     private static final int HEIGHT = 500;
 
     public AppGUI() {
+        game = new Game();
         setSize(WIDTH, HEIGHT);
         setResizable(false);
 
