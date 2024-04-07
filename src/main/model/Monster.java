@@ -6,12 +6,15 @@ public class Monster extends Person {
     private int defenceCount;
     private int max_HP;
     private int count = 0;
-    public Monster(int HP, int damage, int defence, double multipler) {
-        super(1, HP, damage, defence, multipler);
+    public Monster(int HP, int damage, int defence, double multipler,String name) {
+        super(1, HP, damage, defence, multipler,name);
         max_HP = HP;
         this.defenceCount = 3;
     }
 
+    public int getMaxHP(){
+        return max_HP;
+    }
     public String randomAction(Person p) {
         Random random = new Random();
         double hpPercentage = (double) HP / max_HP;

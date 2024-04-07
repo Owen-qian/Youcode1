@@ -1,7 +1,10 @@
 package main.ui;
 
+import main.model.Game;
+
 public class Main {
     public static void main(String[] args) {
-        //stub
+       Game g =new Game();
+       g.start();
     }
 }

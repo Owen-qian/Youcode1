@@ -14,7 +14,7 @@ public class Defence extends Skill {
             messages.add("Do some exercises");
             messages.add("Go swimming");
         } else if (characterType == MONSTER_TYPE) {
-            messages.add("You're confused and the time to accomplish your goals has increased");
+            messages.add("You get stuck and the time to accomplish your goals has increased");
             messages.add("You're assigned to a new tasks.");
         }
     }

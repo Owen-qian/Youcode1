@@ -5,19 +5,23 @@ public abstract class Person {
     protected Booster booster;
     protected int HP,type;
     private int shield;
+    private String name;
 
     public int getShield() {
         return shield;
     }
 
-    public Person(int type, int HP, int damage, int defence,double multipler){
+    public Person(int type, int HP, int damage, int defence,double multipler,String name){
         this.type = type;
         this.HP = HP;
+        this.name = name;
         this.defence = new Defence(type,defence,multipler);
         this.attack = new Attack(type,damage,multipler);
         this.booster = new Booster(type);
     }
-
+    public String getName(){
+        return name;
+    }
     public Skill getAttack() {
         return attack;
     }
@@ -53,7 +57,10 @@ public abstract class Person {
             HP = HP - amount;
         }
     }
-    private boolean check() {
+    boolean check() {
         return HP <= 0;
+    }
+    public int getHP(){
+        return HP;
     }
 }
