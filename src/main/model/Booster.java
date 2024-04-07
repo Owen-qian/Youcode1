@@ -29,7 +29,7 @@ public class Booster{
             return action;
         }
         Random random = new Random();
-        String action = "You choose to "+actions.get(random.nextInt(actions.size()+1))+". You will work better! :)";
+        String action = "You choose to "+actions.get(random.nextInt(actions.size()))+". You will work better! :)";
         status =true;
         rounds = 3;
         return action;
