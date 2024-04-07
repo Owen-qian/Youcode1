@@ -7,6 +7,7 @@ import java.util.Random;
 public class Booster{
     private boolean status = false;
     private int rounds;
+    private int type;
     private List<String> actions = new ArrayList<>();
     public Booster(int type){
 
@@ -15,6 +16,7 @@ public class Booster{
         actions.add("read a book");
         actions.add("seek help from a psychiatrist");
         actions.add("eat some healthy food");
+        this.type=type;
     }
 
     public boolean isStatus() {
@@ -22,6 +24,10 @@ public class Booster{
     }
 
     public String print(){
+        if(type == 1){
+            String action = "You found out that work is harder than you thought :(";
+            return action;
+        }
         Random random = new Random();
         String action = "You choose to "+actions.get(random.nextInt(actions.size()+1))+". You will work better! :)";
         status =true;

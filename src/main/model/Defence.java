@@ -14,9 +14,8 @@ public class Defence extends Skill {
             messages.add("Do some exercises");
             messages.add("Go swimming");
         } else if (characterType == MONSTER_TYPE) {
-            messages.add("The enemy strengthened itself");
-            messages.add("Your hits will deal less damage");
-            messages.add("Monster is defending");
+            messages.add("You're confused and the time to accomplish your goals has increased");
+            messages.add("You're assigned to a new tasks.");
         }
     }
 
