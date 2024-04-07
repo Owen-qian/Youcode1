@@ -37,6 +37,14 @@ public class AppGUI extends JFrame implements ActionListener {
 
     }
 
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
+    }
+
 
 
 
