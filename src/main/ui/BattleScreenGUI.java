@@ -13,6 +13,7 @@ public class BattleScreenGUI {
             // Create panels for character sprites and health bars
             JPanel characterPanel = new JPanel(new BorderLayout());
             characterPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
             JPanel healthPanel = new JPanel(new BorderLayout());
             healthPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
             JPanel buttonsPanel = new JPanel();
@@ -31,18 +32,21 @@ public class BattleScreenGUI {
             JLabel playerSprite = new JLabel(playerIcon);
             JLabel monsterSprite = new JLabel(monsterIcon);
 
+
+
+
             // Create health bars
             int playerHealth = 100; // Example health value
             int monsterHealth = 100;   // Example health value
             JProgressBar playerHealthBar = new JProgressBar(0, 100);
             playerHealthBar.setStringPainted(true);
             playerHealthBar.setForeground(Color.green);
-            playerHealthBar.setValue(playerHealth);
+            playerHealthBar.setValue(playerHealth); // must set to player's actual health
             playerHealthBar.setString(playerHealth + "%");
             JProgressBar monsterHealthBar = new JProgressBar(0, 100);
             monsterHealthBar.setStringPainted(true);
             monsterHealthBar.setForeground(Color.green);
-            monsterHealthBar.setValue(monsterHealth);
+            monsterHealthBar.setValue(monsterHealth); // must set monster's actual health
             monsterHealthBar.setString(monsterHealth + "%");
 
             // Create action buttons
@@ -54,6 +58,7 @@ public class BattleScreenGUI {
             // Add components to panels
             characterPanel.add(playerSprite, BorderLayout.WEST);
             characterPanel.add(monsterSprite, BorderLayout.EAST);
+
             healthPanel.add(playerHealthBar, BorderLayout.WEST);
             healthPanel.add(monsterHealthBar, BorderLayout.EAST);
             buttonsPanel.add(attackButton);

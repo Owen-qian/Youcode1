@@ -6,7 +6,6 @@ import main.ui.panels.HomePage;
 import main.ui.panels.MenuPanel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,9 +30,12 @@ public class AppGUI extends JFrame implements ActionListener {
     }
 
     public void initView() {
-        homePage = new HomePage(this);
-        getContentPane().add(homePage, BorderLayout.CENTER);
-        homePage.setVisible(true);
+//        homePage = new HomePage(this);
+//        getContentPane().add(homePage, BorderLayout.CENTER);
+//        homePage.setVisible(true);
+
+        gamepanel = new GamePanel(this);
+        gamepanel.setVisible(true);
     }
 
     public void initMainMenu() {

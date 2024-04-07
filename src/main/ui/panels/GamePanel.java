@@ -9,11 +9,14 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.String.valueOf;
+
 public class GamePanel extends JPanel {
 
     private Player player;
     private List<Monster> monsters;
     private int currentMonsterIndex;
+    private Monster currentMonster;
     private boolean gameOver;
 
     private AppGUI app;
@@ -27,6 +30,8 @@ public class GamePanel extends JPanel {
     private JPanel rightPanel;
     private JPanel monsterHpPanel;
     private JProgressBar monsterHp;
+    private JLabel monsterShieldImage;
+    private JLabel shieldNumber;
     private JPanel personHpPanel;
     private JProgressBar personHp;
 
@@ -45,6 +50,7 @@ public class GamePanel extends JPanel {
         monsters.add(new Monster(120, 25, 10, 1.4,"The life"));
 
         currentMonsterIndex = 0;
+        currentMonster = monsters.get(currentMonsterIndex);
         gameOver = false;
 
         this.app = app;
@@ -60,7 +66,13 @@ public class GamePanel extends JPanel {
 
     // EFFECTS: adds the character, their decision buttons, monster hp, character hp to left half of game panel
     public void initLeftPanel() {
+        shieldNumber = new JLabel(valueOf(currentMonster.getShield()));
+        add(shieldNumber);
         monsterHp = new JProgressBar();
+        monsterHp.setValue(currentMonster.getHP());
+        add(monsterHp);
+
+
 
         //
     }

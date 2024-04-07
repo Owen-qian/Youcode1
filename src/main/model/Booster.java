@@ -46,4 +46,8 @@ public class Booster{
         }
     }
 
+    public int getRounds() {
+        return rounds;
+    }
+
 }
